@@ -12,18 +12,33 @@
     <script>
         var canvas = d3.select("body").append("svg")
             .attr("width", 500)
-            .attr("height", 500);
+            .attr("height", 500)
+            .append("g")
+                .attr("transform", "translate(50, 50)");
         
-        var diagonal = d3.svg.diagonal()
-            .source({x: 10, y: 10})
-            .target({x: 300, y: 300});
+        var tree = d3.layout.tree()
+            .size([400, 400]);
         
-        canvas.append("path")
-            .attr("fill", "none")
-            .attr("stroke", "orange")
-            .attr("d", diagonal);
-        
-        
+        d3.json("data.json", function (data){
+            //returns array with all the nodes + coordinates
+            var nodes = tree.nodes(data);
+            //used to link the nodes to eachother
+            var links = tree.links(nodes);
+            
+            //select all the nodes in the canvas and readies it to append things to them.
+            var node = canvas.selectAll(".node")
+                .data(nodes)
+                .enter()
+                .append("g")
+                    .attr("class", "node")
+                    //space out the nodes
+                    .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
+            
+            //append a circle to each node
+            node.append("circle")
+                .attr("r", 5)
+                .attr("fill", "orange");
+        })
     </script>
 
   </body>
