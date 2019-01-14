@@ -32,12 +32,31 @@
                 .append("g")
                     .attr("class", "node")
                     //space out the nodes
-                    .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
+                    .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; })
             
             //append a circle to each node
             node.append("circle")
-                .attr("r", 5)
+                .attr("r", 7)
                 .attr("fill", "orange");
+            //append text to each node
+            node.append("text")
+                //return the name (specified in json file) from the data
+                .text(function (d) { return d.name; })
+            
+            //make var diagonal with the d3 draw a diagonal function
+            var diagonal = d3.svg.diagonal()
+                .projection(function (d) { return [d.y, d.x]; });
+            
+            //create the link lines between the nodes
+            canvas.selectAll(".link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("fill", "none")
+                .attr("stroke", "orange")
+                .attr("d", diagonal);
+                
         })
     </script>
 
