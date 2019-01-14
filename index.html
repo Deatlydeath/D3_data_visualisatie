@@ -9,15 +9,18 @@
   </head>
 
   <body>
+    <div class="d3canvas">
     <script>
         var canvas = d3.select("body").append("svg")
-            .attr("width", 500)
-            .attr("height", 500)
+            .attr("width", 1200)
+            .attr("height", 400)
+            .style("margin-left", "20%")
+            .style("margin-top", "10%")
             .append("g")
                 .attr("transform", "translate(50, 50)");
         
         var tree = d3.layout.tree()
-            .size([400, 400]);
+            .size([400, 800]);
         
         d3.json("data.json", function (data){
             //returns array with all the nodes + coordinates
@@ -35,9 +38,8 @@
                     .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; })
             
             //append a circle to each node
-            node.append("circle")
-                .attr("r", 7)
-                .attr("fill", "orange");
+            /*node.append("circle")
+                .attr("r", 7)*/
             //append text to each node
             node.append("text")
                 //return the name (specified in json file) from the data
@@ -53,13 +55,11 @@
                 .enter()
                 .append("path")
                 .attr("class", "link")
-                .attr("fill", "none")
-                .attr("stroke", "orange")
                 .attr("d", diagonal);
                 
         })
     </script>
-
+    </div>
   </body>
 
 </html>
