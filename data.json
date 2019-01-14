@@ -1,0 +1,21 @@
+{
+    "name": "Bezoekers",
+    "children": [
+        {
+            "name": "Toeschouwers",
+            "children": [
+                {
+                    "name": "Interactie"
+                }
+            ]
+        },
+        {
+            "name": "Spelers",
+            "children": [
+                {
+                    "name": "Interactie"
+                }
+            ]
+        }
+    ]
+}
