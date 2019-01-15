@@ -9,11 +9,10 @@
   </head>
 
   <body>
-    <div class="d3canvas">
     <script>
         var canvas = d3.select("body").append("svg")
             .attr("width", 1200)
-            .attr("height", 400)
+            .attr("height", 600)
             .style("margin-left", "20%")
             .style("margin-top", "10%")
             .append("g")
@@ -38,12 +37,14 @@
                     .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; })
             
             //append a circle to each node
-            /*node.append("circle")
-                .attr("r", 7)*/
+            node.append("circle")
+                .attr("r", 40)
             //append text to each node
             node.append("text")
+                .attr("dx", "-70")
+                .attr("dy", "-50")
                 //return the name (specified in json file) from the data
-                .text(function (d) { return d.name; })
+                .text(function (d) { return d.name + d.number; })
             
             //make var diagonal with the d3 draw a diagonal function
             var diagonal = d3.svg.diagonal()
@@ -59,7 +60,6 @@
                 
         })
     </script>
-    </div>
   </body>
 
 </html>

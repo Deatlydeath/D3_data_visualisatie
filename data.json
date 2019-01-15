@@ -1,19 +1,24 @@
 {
-    "name": "Bezoekers",
+    "name": "Bezoekers: ",
+    "number": 500000,
     "children": [
         {
-            "name": "Toeschouwers: 100.000",
+            "name": "Toeschouwers: ",
+            "number": 100.000,
             "children": [
                 {
-                    "name": "Per avond: 10.000"
+                    "name": "Per avond: ",
+                    "number": 10000
                 }
             ]
         },
         {
-            "name": "Spelers: 4000",
+            "name": "Spelers: ",
+            "number": 4000,
             "children": [
                 {
-                    "name": "Per avond: 400"
+                    "name": "Per avond: ",
+                    "number": 400
                 }
             ]
         }
