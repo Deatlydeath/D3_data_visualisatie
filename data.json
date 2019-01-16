@@ -4,7 +4,7 @@
     "children": [
         {
             "name": "Toeschouwers: ",
-            "number": 100.000,
+            "number": 100000,
             "children": [
                 {
                     "name": "Per avond: ",

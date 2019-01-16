@@ -2,6 +2,50 @@ body, html{
     background-color: white;
 }
 
+/* NAV NAV NAV NAV NAV NAV NAV NAV NAV */
+
+ul.topnav {
+    list-style-type: none;
+    margin: -8px;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    position: relative;
+    z-index: 4;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 25px;
+    text-decoration: none;
+    transition: color .3s ease-in;
+    font-family: Raleway, sans-serif;
+    text-transform: uppercase;
+   font-size: 14px;
+
+}
+
+ul.topnav li {
+    float: right;
+}
+
+ul.topnav li.left {
+    float: left;
+}
+
+ul.topnav li a:hover:not(.active) {
+    color: gray;
+}
+
+ul.topnav img {
+    height: 75px;
+    width: auto;
+}
+
+/* D3 D3 D3 D3 D3 D3 D3 D3 D3 D3 D3 D3 */
+
 .node circle {
     fill: orange;
     stroke: orange;
@@ -11,11 +55,17 @@ body, html{
 .link {
     fill: none;
     stroke: orange;
-    stroke-width: 40px;
+    stroke-width: 35px;
 }
 
 .node text { 
     text-decoration: underline;
-    font: 20px sans-serif; 
+    font: 19px sans-serif; 
     text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+svg {
+    display: block;
+    margin: auto;
+    margin-top: 7%;
 }

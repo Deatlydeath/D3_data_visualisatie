@@ -9,12 +9,20 @@
   </head>
 
   <body>
+      <ul class="topnav">
+            <li><a href="contact.php">Test 1</a></li>
+            <li><a href="portfolioindex.html">Test 2</a></li>
+            <li><a href="over.html">Test 3</a></li>
+            <li><a href="index.html">Final Product</a></li>
+            <img src="images/logo1.JPG" id="logo">
+        </ul>
+    </header>
     <script>
         var canvas = d3.select("body").append("svg")
-            .attr("width", 1200)
+            .attr("width", 1000)
             .attr("height", 600)
-            .style("margin-left", "20%")
-            .style("margin-top", "10%")
+            /*.style("margin-left", "20%")
+            .style("margin-top", "10%")*/
             .append("g")
                 .attr("transform", "translate(50, 50)");
         
@@ -38,10 +46,10 @@
             
             //append a circle to each node
             node.append("circle")
-                .attr("r", 40)
+                .attr("r", 35)
             //append text to each node
             node.append("text")
-                .attr("dx", "-70")
+                .attr("dx", "-51")
                 .attr("dy", "-50")
                 //return the name (specified in json file) from the data
                 .text(function (d) { return d.name + d.number; })
@@ -57,7 +65,6 @@
                 .append("path")
                 .attr("class", "link")
                 .attr("d", diagonal);
-                
         })
     </script>
   </body>
