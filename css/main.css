@@ -1,5 +1,5 @@
 body, html{
-    background-color: white;
+    background-color: #2d2d2d;
 }
 
 /* NAV NAV NAV NAV NAV NAV NAV NAV NAV */
@@ -47,21 +47,25 @@ ul.topnav img {
 /* D3 D3 D3 D3 D3 D3 D3 D3 D3 D3 D3 D3 */
 
 .node circle {
-    fill: orange;
-    stroke: orange;
+    fill: white;
+    stroke: white;
     stroke-width: 3px;
 }
 
 .link {
+    stroke: white;
     fill: none;
-    stroke: orange;
-    stroke-width: 35px;
+    stroke-width: 32px;
 }
 
 .node text { 
-    text-decoration: underline;
-    font: 19px sans-serif; 
-    text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+    color: #202020;
+    font-size: 0px;
+    font-family: sans-serif;
+    letter-spacing: .1em;
+    text-shadow: 
+      -1px -1px 1px #111, 
+      2px 2px 1px #363636;
 }
 
 svg {

@@ -44,19 +44,10 @@
                     //space out the nodes
                     .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; })
             
-            //append a circle to each node
-            node.append("circle")
-                .attr("r", 35)
-            //append text to each node
-            node.append("text")
-                .attr("dx", "-51")
-                .attr("dy", "-50")
-                //return the name (specified in json file) from the data
-                .text(function (d) { return d.name + d.number; })
-            
             //make var diagonal with the d3 draw a diagonal function
             var diagonal = d3.svg.diagonal()
                 .projection(function (d) { return [d.y, d.x]; });
+            
             
             //create the link lines between the nodes
             canvas.selectAll(".link")
@@ -64,7 +55,45 @@
                 .enter()
                 .append("path")
                 .attr("class", "link")
-                .attr("d", diagonal);
+                .attr("d", diagonal)
+                        
+            //append a circle to each node
+            node.append("circle")
+                .attr("r", 1)
+            //append text to each node
+            node.append("text")
+                .attr("dx", "-50")
+                .attr("dy", "-50")
+                //return the name (specified in json file) from the data
+                .text(function (d) { return d.name + d.number; })
+            
+            function _fadein() {
+                canvas.selectAll(".link")
+                .transition("fadein")
+                .style("stroke", "orange")
+                .duration(2000);
+            }
+            
+            function _fadecircle() {
+                canvas.selectAll("circle")
+                .transition("fadecircle")
+                .attr("r", 30)
+                .style("fill", "orange")
+                .style("stroke", "orange")
+                .duration(2000);
+            }
+            
+            function _fadetext() {
+                canvas.selectAll("text")
+                .transition("fadetext")
+                .style("font-size", "17px")
+                .delay(2000)
+                .duration(1000);
+            }
+            
+            _fadein();
+            _fadecircle();
+            _fadetext();
         })
     </script>
   </body>
