@@ -3,26 +3,20 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>D3 Data</title>
-      <script src="https://d3js.org/d3.v3.min.js"></script>
-    <link rel="stylesheet" href="/css/main.css">
+    <title>D3 Grafiek</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="https://d3js.org/d3.v3.min.js"></script> 
   </head>
 
   <body>
       <ul class="topnav">
-            <li><a href="contact.php">Test 1</a></li>
-            <li><a href="portfolioindex.html">Test 2</a></li>
-            <li><a href="over.html">Test 3</a></li>
-            <li><a href="index.html">Final Product</a></li>
+            <li><a href="index.html">Home</a></li>
             <img src="images/logo1.JPG" id="logo">
         </ul>
-    </header>
     <script>
         var canvas = d3.select("body").append("svg")
             .attr("width", 1000)
             .attr("height", 600)
-            /*.style("margin-left", "20%")
-            .style("margin-top", "10%")*/
             .append("g")
                 .attr("transform", "translate(50, 50)");
         
@@ -47,8 +41,6 @@
             //make var diagonal with the d3 draw a diagonal function
             var diagonal = d3.svg.diagonal()
                 .projection(function (d) { return [d.y, d.x]; });
-            
-            
             //create the link lines between the nodes
             canvas.selectAll(".link")
                 .data(links)
@@ -67,9 +59,11 @@
                 //return the name (specified in json file) from the data
                 .text(function (d) { return d.name + d.number; })
             
+            //all animations below
             function _fadein() {
                 canvas.selectAll(".link")
                 .transition("fadein")
+                .style("stroke-width", "32px")
                 .style("stroke", "orange")
                 .duration(2000);
             }
@@ -90,7 +84,7 @@
                 .delay(2000)
                 .duration(1000);
             }
-            
+            //run animations
             _fadein();
             _fadecircle();
             _fadetext();

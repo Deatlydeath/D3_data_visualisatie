@@ -55,7 +55,7 @@ ul.topnav img {
 .link {
     stroke: white;
     fill: none;
-    stroke-width: 32px;
+    stroke-width: 0px;
 }
 
 .node text { 
